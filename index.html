@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Ремонт под ключ | Бесплатный выезд специалиста | Сантехник, Электрик | Отделочные работы любой сложности</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter + Playfair Display (акцент) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e1e2a;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            background: linear-gradient(135deg, #1e2a3e, #2c3e50);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .section-title p {
+            color: #5a6874;
+            max-width: 600px;
+            margin: 0.5rem auto 0;
+        }
+
+        /* ========== BUTTONS & BADGES ========== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #d4af37;
+            color: #1e1e2a;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 8px 16px -8px rgba(0,0,0,0.15);
+        }
+        .btn i {
+            font-size: 1.1rem;
+        }
+        .btn:hover {
+            background: #c9a82b;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 22px -10px rgba(0,0,0,0.2);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            box-shadow: none;
+        }
+        .btn-outline:hover {
+            background: #d4af37;
+            color: #1e1e2a;
+        }
+
+        /* ========== HEADER / NAV ========== */
+        .navbar {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid #eef2f5;
+        }
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: linear-gradient(125deg, #1f2b38, #b8860b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #d4af37;
+            background: none;
+            -webkit-background-clip: unset;
+        }
+        .nav-phone {
+            background: #f8f9fc;
+            padding: 10px 20px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #1e2a3e;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .nav-phone i {
+            color: #d4af37;
+            font-size: 1.2rem;
+        }
+        .nav-phone:hover {
+            background: #eef2f7;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            padding: 60px 0 70px;
+            background: linear-gradient(120deg, #fef9f0 0%, #ffffff 100%);
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-badge {
+            background: rgba(212, 175, 55, 0.12);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #a67c00;
+            margin-bottom: 20px;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #1e2a3e;
+        }
+        .hero-highlight {
+            color: #d4af37;
+            border-bottom: 3px solid #d4af37;
+            display: inline-block;
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            color: #4a5562;
+            margin: 20px 0 30px;
+            max-width: 550px;
+        }
+        .features-hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0 25px;
+        }
+        .feat-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f7f9fc;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+        .feat-item i {
+            color: #d4af37;
+            font-size: 1.2rem;
+        }
+        .hero-image {
+            flex: 0.9;
+            background: url('https://placehold.co/600x500/f5f0e6/d4af37?text=Ремонт+под+ключ') center/cover no-repeat;
+            border-radius: 32px;
+            min-height: 340px;
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.15);
+            background-size: cover;
+            background-image: linear-gradient(125deg, #dad3c4 0%, #c0b9a8 100%), url('https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=600');
+            background-blend-mode: overlay;
+            background-position: center;
+        }
+
+        /* ========== FREE MASTER SECTION ========== */
+        .free-master {
+            background: #1e2a3e;
+            color: white;
+            padding: 55px 0;
+            margin: 40px 0;
+            border-radius: 48px;
+        }
+        .free-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .free-text h3 {
+            font-size: 1.9rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 12px;
+        }
+        .free-text p {
+            font-size: 1rem;
+            opacity: 0.85;
+            max-width: 500px;
+        }
+        .free-icon {
+            font-size: 3.8rem;
+            background: rgba(212, 175, 55, 0.2);
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+        }
+        .free-icon i {
+            color: #d4af37;
+        }
+
+        /* ========== SERVICES CARDS ========== */
+        .services {
+            padding: 60px 0 40px;
+        }
+        .cards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .service-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 30px 24px;
+            flex: 1 1 260px;
+            box-shadow: 0 12px 26px -8px rgba(0,0,0,0.05);
+            transition: all 0.25s ease;
+            border: 1px solid #edf2f7;
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #d4af37;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+        }
+        .service-icon {
+            background: #fef5e6;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            margin: 0 auto 20px;
+        }
+        .service-icon i {
+            font-size: 2.2rem;
+            color: #d4af37;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            color: #5c6b7a;
+            line-height: 1.4;
+        }
+
+        /* ========== SPECIALISTS (САНТЕХНИК, ЭЛЕКТРИК) ========== */
+        .specialists {
+            background: #fafafc;
+            padding: 60px 0;
+            border-radius: 48px;
+            margin: 30px 0;
+        }
+        .spec-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .spec-card {
+            background: white;
+            border-radius: 32px;
+            padding: 30px 30px;
+            flex: 1 1 280px;
+            text-align: center;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.03);
+            transition: 0.2s;
+            border: 1px solid #eef2f9;
+        }
+        .spec-card i {
+            font-size: 2.6rem;
+            background: #f1ede4;
+            padding: 18px;
+            border-radius: 60px;
+            color: #d4af37;
+            margin-bottom: 18px;
+        }
+        .spec-card h3 {
+            font-size: 1.7rem;
+            margin: 10px 0;
+        }
+        .spec-desc {
+            color: #2c3e50;
+            font-weight: 500;
+            margin: 12px 0;
+        }
+
+        /* ========== WORK STAGES (любой сложности) ========== */
+        .complexity {
+            padding: 50px 0;
+        }
+        .complex-badge {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .badge-dark {
+            background: #1e2a3e;
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 60px;
+            color: #d4af37;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .stages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .stage {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 24px 20px;
+            width: 220px;
+            text-align: center;
+            box-shadow: 0 8px 16px -8px rgba(0,0,0,0.05);
+            border: 1px solid #e9edf2;
+        }
+        .stage-num {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        /* ========== CTA PHONE ========== */
+        .cta-phone {
+            background: linear-gradient(115deg, #1e2a3e 0%, #2c3e50 100%);
+            border-radius: 48px;
+            padding: 48px 32px;
+            margin: 50px 0;
+            text-align: center;
+            color: white;
+        }
+        .cta-phone h3 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .big-phone {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: #d4af37;
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 60px;
+            color: #1e2a3e;
+            margin: 20px 0;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .big-phone:hover {
+            background: #e6c246;
+            transform: scale(1.02);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #eef2f5;
+            color: #6c7a89;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 800px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .free-grid {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cta-phone h3 {
+                font-size: 1.5rem;
+            }
+            .big-phone {
+                font-size: 1.5rem;
+                padding: 8px 20px;
+            }
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 550px) {
+            .container {
+                padding: 0 18px;
+            }
+            .features-hero {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- NAVBAR -->
+        <div class="navbar">
+            <div class="logo">RE<span>НОВАТОР</span> <span style="font-size:0.9rem;">⚡</span></div>
+            <a href="tel:+79687257464" class="nav-phone"><i class="fas fa-phone-alt"></i> +7 968 725 74 64</a>
+        </div>
+    </div>
+
+    <!-- HERO секция: ремонт под ключ, бесплатный выезд -->
+    <div class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-key"></i> Ремонт под ключ · Без посредников</div>
+                <h1>Ремонт квартир, офисов, домов <span class="hero-highlight">качественно</span></h1>
+                <p class="hero-desc">От дизайн-проекта до финишной отделки. Работаем с любыми объектами: квартиры, коттеджи, офисы, апартаменты.</p>
+                <div class="features-hero">
+                    <div class="feat-item"><i class="fas fa-tachometer-alt"></i> Фиксированные сроки</div>
+                    <div class="feat-item"><i class="fas fa-ruler-combined"></i> Замер и смета 0₽</div>
+                    <div class="feat-item"><i class="fas fa-hard-hat"></i> Гарантия 3 года</div>
+                </div>
+                <a href="tel:+79687257464" class="btn"><i class="fas fa-calendar-check"></i> Вызвать мастера бесплатно</a>
+                <p style="margin-top: 18px; font-size: 0.85rem; color:#5a6874;"><i class="fas fa-check-circle" style="color:#d4af37;"></i> Выезд специалиста в день обращения</p>
+            </div>
+            <div class="hero-image"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- БЕСПЛАТНЫЙ ВЫЕЗД СПЕЦИАЛИСТА + САНТЕХНИК/ЭЛЕКТРИК акцент -->
+        <div class="free-master">
+            <div class="free-grid">
+                <div class="free-text">
+                    <h3>🚀 Бесплатный выезд и консультация</h3>
+                    <p>Наш специалист приедет в удобное время, выполнит замеры, поможет составить смету и ответит на все вопросы. <strong>Никаких скрытых платежей!</strong></p>
+                    <p style="margin-top: 12px;"><i class="fas fa-wrench"></i> Сантехник, электрик — в штате, высокий уровень квалификации.</p>
+                </div>
+                <div class="free-icon">
+                    <i class="fas fa-user-check"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- УСЛУГИ: отделочные работы любой сложности + узкие специалисты -->
+        <div class="services">
+            <div class="section-title">
+                <h2>Выполняем работы любой сложности</h2>
+                <p>Комплексный ремонт — от черновой отделки до элитной</p>
+            </div>
+            <div class="cards-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
+                    <h3>Отделочные работы</h3>
+                    <p>Штукатурка, шпаклевка, покраска, обои, декоративные покрытия — любые задачи.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-bath"></i></div>
+                    <h3>Сантехника</h3>
+                    <p>Монтаж, замена, подключение. Опытные сантехники — быстро и аккуратно.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Электрика</h3>
+                    <p>Замена проводки, щитки, розетки, свет. Схемы и сертификаты.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Дизайн & перепланировка</h3>
+                    <p>Согласование, эргономика, 3D-визуализация, под ключ.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК САНТЕХНИК + ЭЛЕКТРИК выделенный -->
+        <div class="specialists">
+            <div class="section-title">
+                <h2>Профильные специалисты в штате</h2>
+                <p>Сантехнические и электромонтажные работы — на высоком уровне</p>
+            </div>
+            <div class="spec-row">
+                <div class="spec-card">
+                    <i class="fas fa-faucet"></i>
+                    <h3>Сантехник</h3>
+                    <div class="spec-desc">Установка унитазов, смесителей, радиаторов, труб. Устранение протечек, монтаж под ключ.</div>
+                    <p style="margin-top: 12px;"><i class="fas fa-check-circle" style="color:#d4af37;"></i> Гарантия на все работы</p>
+                </div>
+                <div class="spec-card">
+                    <i class="fas fa-charging-station"></i>
+                    <h3>Электрик</h3>
+                    <div class="spec-desc">Электромонтаж любой сложности: прокладка кабеля, автоматы, УЗО, замена проводки.</div>
+                    <p style="margin-top: 12px;"><i class="fas fa-shield-alt" style="color:#d4af37;"></i> Современные материалы</p>
+                </div>
+                <div class="spec-card">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>Мастер-универсал</h3>
+                    <div class="spec-desc">Комплексное решение: сборка мебели, мелкий ремонт, подготовка под отделку.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- отделочные работы любой сложности + этапы -->
+        <div class="complexity">
+            <div class="complex-badge">
+                <div class="badge-dark"><i class="fas fa-tasks"></i> Отделочные работы любой сложности</div>
+            </div>
+            <div class="section-title">
+                <p>Косметический, капитальный, евроремонт — реализуем проекты любой площади и бюджета</p>
+            </div>
+            <div class="stages">
+                <div class="stage"><div class="stage-num">01</div> <h4>Замер и смета</h4><p>Бесплатный выезд</p></div>
+                <div class="stage"><div class="stage-num">02</div> <h4>Черновая отделка</h4><p>Стяжка, штукатурка</p></div>
+                <div class="stage"><div class="stage-num">03</div> <h4>Инженерия</h4><p>Сантехника / электрика</p></div>
+                <div class="stage"><div class="stage-num">04</div> <h4>Чистовая отделка</h4><p>Плитка, обои, полы</p></div>
+                <div class="stage"><div class="stage-num">05</div> <h4>Под ключ</h4><p>Уборка + сдача объекта</p></div>
+            </div>
+        </div>
+
+        <!-- Прямой вызов + телефон крупно -->
+        <div class="cta-phone">
+            <i class="fas fa-phone-volume" style="font-size: 2rem; color:#d4af37; margin-bottom: 10px; display: inline-block;"></i>
+            <h3>Остались вопросы? Звоните!</h3>
+            <a href="tel:+79687257464" class="big-phone">+7 968 725 74 64</a>
+            <p style="margin-top: 18px;">Выезд специалиста бесплатно. Работаем с юридическими и физическими лицами.<br> Ремонт квартир, офисов и домов — под ключ, с гарантией качества.</p>
+            <div style="margin-top: 20px;">
+                <span style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 50px; font-size:0.9rem;"><i class="fab fa-whatsapp"></i> WhatsApp / Telegram</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><i class="fas fa-tools"></i> Ремонт под ключ | Бесплатный выезд мастера | Сантехник, Электрик | Отделочные работы любой сложности</p>
+            <p style="margin-top: 12px;">© 2025 Реноватор — Качественный ремонт квартир, офисов и домов. Все права защищены.</p>
+            <p style="margin-top: 6px; font-size: 0.8rem;"><i class="fas fa-map-marker-alt"></i> Москва и Московская область</p>
+        </div>
+    </footer>
+</body>
+</html>
